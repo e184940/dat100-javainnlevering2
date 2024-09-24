@@ -1,20 +1,33 @@
 package no.hvl.dat100.tabeller;
 
+import java.util.*;
+
 public class Tabeller {
+	
+	public static void main(String[] args) {
+		
+		int[] tabell = {1, 3, 4, 7, 9, 10};
+		
+		skrivUt(tabell);
+		
+	}
 
 	// a)
 	public static void skrivUt(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden skrivUt ikke implementert");
-
+		System.out.print("[");
+		for (int i = 0; i < tabell.length; i++) {
+			System.out.print(tabell[i]);
+			if(i < tabell.length - 1) {
+				System.out.print(", ");
+			}
+		}
+		System.out.print("]");
 	}
 
 	// b)
 	public static String tilStreng(int[] tabell) {
-
-		// TODO
-		throw new UnsupportedOperationException("Metoden tilStreng ikke implementert");
+		
 	}
 
 	// c)
