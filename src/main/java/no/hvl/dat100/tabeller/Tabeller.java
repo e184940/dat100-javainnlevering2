@@ -4,21 +4,41 @@ import java.util.*;
 
 public class Tabeller {
 
+	// private static final boolean = false;
+
 	public static void main(String[] args) {
 
-		int[] tabell = { 1, 3, 4, 7, 9, 10 };
+		int[] tabell = { 6, 1, 4, 3, 9, -3 };
 
 		skrivUt(tabell);
-		System.out.println('"' + tilStreng(tabell) + '"');
-		int resultat = summer(tabell);
-		System.out.println("Summen av tallene i tabellen er: " + resultat);
+		System.out.println("b) " + '"' + tilStreng(tabell) + '"');
+		int sum = summer(tabell);
+		System.out.println("c) Summen av tallene i tabellen er: " + sum);
 
+		int tall = 4;
+		boolean finnes = finnesTall(tabell, tall);
+
+		if (finnes) {
+			System.out.println("d) it's " + finnes + "! Tallet " + tall + " er i tabellen!");
+		} else {
+			System.out.println("d) it's " + finnes + "! Tallet " + tall + " er ikke i tabellen!");
+		}
+
+		int posisjon = posisjonTall(tabell, tall) + 1;
+
+		if (posisjon != -1) {
+			System.out.println("e) Tallet " + tall + " finnes på posisjon: " + posisjon);
+		} else {
+			System.out.println("e) Tallet " + tall + " finnes ikke i tabellen.");
+		}
+
+		reverser(tabell);
 	}
 
 	// a)
 	public static void skrivUt(int[] tabell) {
 
-		System.out.print("[");
+		System.out.print("a) [");
 		for (int i = 0; i < tabell.length; i++) {
 			System.out.print(tabell[i]);
 			if (i < tabell.length - 1) {
@@ -60,23 +80,46 @@ public class Tabeller {
 	// d)
 	public static boolean finnesTall(int[] tabell, int tall) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden finnesTall ikke implementert");
-
+		for (int element : tabell) {
+			if (element == tall) {
+				return true;
+			}
+		}
+		return false;
 	}
 
 	// e)
 	public static int posisjonTall(int[] tabell, int tall) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden posisjonTall ikke implementert");
+		for (int i = 0; i < tabell.length; i++) {
+			if (tabell[i] == tall) {
+				return i;
+			}
+		}
+		return -1;
 	}
 
 	// f)
 	public static int[] reverser(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden reverser ikke implementert");
+		int lengde = tabell.length;
+		int[] reversertTabell = new int[lengde];
+
+		for (int i = 0; i < lengde; i++) {
+			reversertTabell[i] = tabell[lengde - 1 - i];
+		}
+
+		System.out.print("f) [");
+		for (int i = 0; i < reversertTabell.length; i++) {
+			System.out.print(reversertTabell[i]);
+			if (i < reversertTabell.length - 1) {
+				System.out.print(",");
+			}
+		}
+		System.out.print("]");
+		System.out.println();
+
+		return reversertTabell;
 	}
 
 	// g)
