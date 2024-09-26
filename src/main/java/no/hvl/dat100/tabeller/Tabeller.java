@@ -1,7 +1,5 @@
 package no.hvl.dat100.tabeller;
 
-import java.util.*;
-
 public class Tabeller {
 
 	// private static final boolean = false;
@@ -12,6 +10,7 @@ public class Tabeller {
 
 		skrivUt(tabell);
 		System.out.println("b) " + '"' + tilStreng(tabell) + '"');
+
 		int sum = summer(tabell);
 		System.out.println("c) Summen av tallene i tabellen er: " + sum);
 
@@ -19,9 +18,9 @@ public class Tabeller {
 		boolean finnes = finnesTall(tabell, tall);
 
 		if (finnes) {
-			System.out.println("d) it's " + finnes + "! Tallet " + tall + " er i tabellen!");
+			System.out.println("d) it's " + finnes + "! Tallet " + tall + " er i tabellen");
 		} else {
-			System.out.println("d) it's " + finnes + "! Tallet " + tall + " er ikke i tabellen!");
+			System.out.println("d) it's " + finnes + "! Tallet " + tall + " er ikke i tabellen");
 		}
 
 		int posisjon = posisjonTall(tabell, tall) + 1;
@@ -29,10 +28,24 @@ public class Tabeller {
 		if (posisjon != -1) {
 			System.out.println("e) Tallet " + tall + " finnes på posisjon: " + posisjon);
 		} else {
-			System.out.println("e) Tallet " + tall + " finnes ikke i tabellen.");
+			System.out.println("e) Tallet " + tall + " finnes ikke i tabellen");
 		}
 
 		reverser(tabell);
+
+		int[] sortertTabell = { -3, 1, 5, 6, 9, 14 };
+
+		if (erSortert(sortertTabell)) {
+			System.out.println("g) it's " + erSortert(sortertTabell) + "! tabellen er sortert");
+		} else {
+			System.out.println("g) it's " + erSortert(sortertTabell) + "! tabellen er ikke sortert");
+		}
+		
+		int[] tabell1 = {1, 2, 3};
+        int[] tabell2 = {4, 5, 6};
+
+        settSammen(tabell1, tabell2);
+
 	}
 
 	// a)
@@ -125,15 +138,39 @@ public class Tabeller {
 	// g)
 	public static boolean erSortert(int[] tabell) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden erSortert ikke implementert");
+		for (int i = 0; i < tabell.length - 1; i++) {
+			if (tabell[i] > tabell[i + 1]) {
+				return false;
+			}
+		}
+		return true;
+
 	}
 
 	// h)
 	public static int[] settSammen(int[] tabell1, int[] tabell2) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden settSammen ikke implementert");
+		int lengde1 = tabell1.length;  
+        int lengde2 = tabell2.length;  
+        
+        int[] sammensattTabell = new int[lengde1 + lengde2];
 
+        for (int i = 0; i < lengde1; i++) {
+            sammensattTabell[i] = tabell1[i];
+        }
+
+        for (int i = 0; i < lengde2; i++) {
+            sammensattTabell[lengde1 + i] = tabell2[i];
+        }
+        
+        System.out.print("h) [");
+        for (int i = 0; i < sammensattTabell.length; i++) {
+            System.out.print(sammensattTabell[i]);
+            if (i < sammensattTabell.length - 1) {
+                System.out.print(", ");
+            }
+        }
+        System.out.print("]");
+        return sammensattTabell;  
 	}
 }
