@@ -6,14 +6,20 @@ public class Tabeller {
 
 	public static void main(String[] args) {
 
+		//tabell for å kjøre de fleste metodene
 		int[] tabell = { 6, 1, 4, 3, 9, -3 };
 
+		// a)
 		skrivUt(tabell);
+		
+		// b)
 		System.out.println("b) " + '"' + tilStreng(tabell) + '"');
 
+		// c)
 		int sum = summer(tabell);
 		System.out.println("c) Summen av tallene i tabellen er: " + sum);
 
+		// d)
 		int tall = 4;
 		boolean finnes = finnesTall(tabell, tall);
 
@@ -23,6 +29,7 @@ public class Tabeller {
 			System.out.println("d) it's " + finnes + "! Tallet " + tall + " er ikke i tabellen");
 		}
 
+		// e)
 		int posisjon = posisjonTall(tabell, tall) + 1;
 
 		if (posisjon != -1) {
@@ -30,9 +37,10 @@ public class Tabeller {
 		} else {
 			System.out.println("e) Tallet " + tall + " finnes ikke i tabellen");
 		}
-
+		// f)
 		reverser(tabell);
 
+		// g)
 		int[] sortertTabell = { -3, 1, 5, 6, 9, 14 };
 
 		if (erSortert(sortertTabell)) {
@@ -41,6 +49,7 @@ public class Tabeller {
 			System.out.println("g) it's " + erSortert(sortertTabell) + "! tabellen er ikke sortert");
 		}
 		
+		// h)
 		int[] tabell1 = {1, 2, 3};
         int[] tabell2 = {4, 5, 6};
 
