@@ -176,7 +176,7 @@ public class Tabeller {
         for (int i = 0; i < sammensattTabell.length; i++) {
             System.out.print(sammensattTabell[i]);
             if (i < sammensattTabell.length - 1) {
-                System.out.print(", ");
+                System.out.print(",");
             }
         }
         System.out.print("]");
