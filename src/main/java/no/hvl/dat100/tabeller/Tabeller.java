@@ -2,8 +2,6 @@ package no.hvl.dat100.tabeller;
 
 public class Tabeller {
 
-	// private static final boolean = false;
-
 	public static void main(String[] args) {
 
 		//tabell for å kjøre de fleste metodene
