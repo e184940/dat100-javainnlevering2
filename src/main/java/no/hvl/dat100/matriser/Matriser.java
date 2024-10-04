@@ -137,7 +137,7 @@ public class Matriser {
 		int n = a[0].length; 
 		int p = b[0].length; 
 
-		// Vi lager en ny matrise med dimensjonene m*p
+		// lager en ny matrise med dimensjonene m*p
 		// der m er antall rader i a, og p er antall kolonner i b
 		int[][] nyMatrise = new int[m][p];
 
