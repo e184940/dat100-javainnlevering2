@@ -24,6 +24,13 @@ public class Matriser {
 		// d)
 		int[][] matrise2 = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 		System.out.println("d) Its " + erLik(matrise, matrise2) + "! Matrisene er like");
+		
+		// e)
+		System.out.println();
+		int[][] speiletMatrise = speile(matrise);
+
+        System.out.println("e)");
+        skrivUt(speiletMatrise);
 	}
 
 	// a)
