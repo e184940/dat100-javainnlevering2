@@ -39,7 +39,7 @@ public class Matriser {
 		int[][] b = { { 7, 8 }, { 9, 10 }, { 11, 12 } };
 
 		int[][] resultat = multipliser(a, b);
-	
+
 		System.out.println("6b) ");
 		skrivUt(resultat);
 
@@ -133,25 +133,25 @@ public class Matriser {
 	// 6b)
 	public static int[][] multipliser(int[][] a, int[][] b) {
 
-		int m = a.length; 
-		int n = a[0].length; 
-		int p = b[0].length; 
+		int m = a.length;
+		int n = a[0].length;
+		int p = b[0].length;
 
-		// lager en ny matrise med dimensjonene m*p
+		// lager en ny matrise med dimensjonene m * p
 		// der m er antall rader i a, og p er antall kolonner i b
 		int[][] nyMatrise = new int[m][p];
 
 		// den ytre løkken går gjennom hver rad i a
 		for (int i = 0; i < m; i++) {
-			// den midtre løkken går gjennom hver kolonne i 
+			// den midtre løkken går gjennom hver kolonne i
 			for (int j = 0; j < p; j++) {
-				// den innerste løkken går gjennom hver kolonne i a (eller rad i b) og beregner summen av produktene som utgjør c[i][j]	
+				// den innerste løkken går gjennom hver kolonne i a (eller rad i b) og beregner
+				// summen av produktene som utgjør c[i][j]
 				for (int k = 0; k < n; k++) {
 					nyMatrise[i][j] += a[i][k] * b[k][j];
 				}
 			}
 		}
-
 		return nyMatrise;
 	}
 
