@@ -7,33 +7,45 @@ public class Matriser {
 		// matrise for å kjøre de fleste metodene
 		int[][] matrise = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 
-		// a)
-		System.out.println("a)");
+		// 5a)
+		System.out.println("5a)");
 		skrivUt(matrise);
 		System.out.println();
 
-		// b)
-		System.out.println("b) \n" + tilStreng(matrise));
+		// 5b)
+		System.out.println("5b) \n" + tilStreng(matrise));
 
-		// c)
+		// 5c)
 		int[][] skalertMatrise = skaler(2, matrise);
-		System.out.println("c)");
+		System.out.println("5c)");
 		skrivUt(skalertMatrise);
 		System.out.println();
 
-		// d)
+		// 5d)
 		int[][] matrise2 = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
-		System.out.println("d) Its " + erLik(matrise, matrise2) + "! Matrisene er like");
+		System.out.println("5d) Its " + erLik(matrise, matrise2) + "! Matrisene er like");
 
-		// e)
+		// 6a)
 		System.out.println();
 		int[][] speiletMatrise = speile(matrise);
 
-		System.out.println("e)");
+		System.out.println("6a)");
 		skrivUt(speiletMatrise);
+		System.out.println();
+
+		// 6b)
+		int[][] a = { { 1, 2, 3 }, { 4, 5, 6 } };
+
+		int[][] b = { { 7, 8 }, { 9, 10 }, { 11, 12 } };
+
+		int[][] resultat = multipliser(a, b);
+	
+		System.out.println("6b) ");
+		skrivUt(resultat);
+
 	}
 
-	// a)
+	// 5a)
 	public static void skrivUt(int[][] matrise) {
 		System.out.print("{");
 		for (int i = 0; i < matrise.length; i++) {
@@ -65,7 +77,7 @@ public class Matriser {
 		return streng;
 	}
 
-	// c)
+	// 5c)
 	public static int[][] skaler(int tall, int[][] matrise) {
 		int[][] nyMatrise = new int[matrise.length][];
 		for (int i = 0; i < matrise.length; i++) {
@@ -77,7 +89,7 @@ public class Matriser {
 		return nyMatrise;
 	}
 
-	// d)
+	// 5d)
 	public static boolean erLik(int[][] a, int[][] b) {
 		if (a.length != b.length) {
 			return false;
@@ -95,10 +107,10 @@ public class Matriser {
 		return true;
 	}
 
-	// e)
+	// 6a)
 	public static int[][] speile(int[][] matrise) {
-		
-		int n = matrise.length; 
+
+		int n = matrise.length;
 
 		int[][] nyMatrise = new int[n][n];
 
@@ -118,11 +130,29 @@ public class Matriser {
 		return nyMatrise;
 	}
 
-	// f)
+	// 6b)
 	public static int[][] multipliser(int[][] a, int[][] b) {
 
-		// TODO
-		throw new UnsupportedOperationException("Metoden multipliser ikke implementert");
+		int m = a.length; 
+		int n = a[0].length; 
+		int p = b[0].length; 
 
+		// Vi lager en ny matrise med dimensjonene m*p
+		// der m er antall rader i a, og p er antall kolonner i b
+		int[][] nyMatrise = new int[m][p];
+
+		// den ytre løkken går gjennom hver rad i a
+		for (int i = 0; i < m; i++) {
+			// den midtre løkken går gjennom hver kolonne i 
+			for (int j = 0; j < p; j++) {
+				// den innerste løkken går gjennom hver kolonne i a (eller rad i b) og beregner summen av produktene som utgjør c[i][j]	
+				for (int k = 0; k < n; k++) {
+					nyMatrise[i][j] += a[i][k] * b[k][j];
+				}
+			}
+		}
+
+		return nyMatrise;
 	}
+
 }
