@@ -24,13 +24,13 @@ public class Matriser {
 		// d)
 		int[][] matrise2 = { { 1, 2, 3 }, { 4, 5, 6 }, { 7, 8, 9 } };
 		System.out.println("d) Its " + erLik(matrise, matrise2) + "! Matrisene er like");
-		
+
 		// e)
 		System.out.println();
 		int[][] speiletMatrise = speile(matrise);
 
-        System.out.println("e)");
-        skrivUt(speiletMatrise);
+		System.out.println("e)");
+		skrivUt(speiletMatrise);
 	}
 
 	// a)
@@ -97,31 +97,25 @@ public class Matriser {
 
 	// e)
 	public static int[][] speile(int[][] matrise) {
+		
+		int n = matrise.length; 
 
-		// lager ny matrise
-		int nyMatrise[][];
-		nyMatrise = new int[matrise.length][];
+		int[][] nyMatrise = new int[n][n];
 
-		for (int i = 0; i < matrise.length; i++) {
-			nyMatrise[i] = new int[matrise[i].length];
-
-			for (int j = 0; j < matrise[i].length; j++) {
+		for (int i = 0; i < n; i++) {
+			for (int j = 0; j < n; j++) {
 				nyMatrise[i][j] = matrise[i][j];
 			}
-
 		}
-		// speiler matrisen
-		for (int i = 0; i < nyMatrise.length; i++) {
-			for (int j = 0; j < nyMatrise[i].length / 2; j++) {
 
+		for (int i = 0; i < n; i++) {
+			for (int j = i + 1; j < n; j++) {
 				int tmp = nyMatrise[i][j];
-				nyMatrise[i][j] = nyMatrise[i][nyMatrise.length - j - 2];
-				nyMatrise[i][nyMatrise.length - j - 2] = tmp;
+				nyMatrise[i][j] = nyMatrise[j][i];
+				nyMatrise[j][i] = tmp;
 			}
 		}
-
 		return nyMatrise;
-
 	}
 
 	// f)
