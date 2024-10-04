@@ -145,8 +145,8 @@ public class Matriser {
 		for (int i = 0; i < m; i++) {
 			// den midtre løkken går gjennom hver kolonne i
 			for (int j = 0; j < p; j++) {
-				// den innerste løkken går gjennom hver kolonne i a (eller rad i b) og beregner
-				// summen av produktene som utgjør c[i][j]
+				// den innerste løkken går gjennom hver kolonne i a (eller rad i b) 
+				// og beregner summen av produktene som utgjør c[i][j]
 				for (int k = 0; k < n; k++) {
 					nyMatrise[i][j] += a[i][k] * b[k][j];
 				}
