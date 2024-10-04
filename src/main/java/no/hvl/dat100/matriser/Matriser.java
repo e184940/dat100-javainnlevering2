@@ -96,9 +96,29 @@ public class Matriser {
 	// e)
 	public static int[][] speile(int[][] matrise) {
 
-		// TODO
+		// lager ny matrise
+		int nyMatrise[][];
+		nyMatrise = new int[matrise.length][];
 
-		throw new UnsupportedOperationException("Metoden speile ikke implementert");
+		for (int i = 0; i < matrise.length; i++) {
+			nyMatrise[i] = new int[matrise[i].length];
+
+			for (int j = 0; j < matrise[i].length; j++) {
+				nyMatrise[i][j] = matrise[i][j];
+			}
+
+		}
+		// speiler matrisen
+		for (int i = 0; i < nyMatrise.length; i++) {
+			for (int j = 0; j < nyMatrise[i].length/2; j++) {
+				
+				int tmp = nyMatrise[i][j];
+				nyMatrise[i][j] = nyMatrise[i][nyMatrise.length-j-2];
+				nyMatrise[i][nyMatrise.length-j-2] = tmp;
+			}
+		}
+		
+		return nyMatrise;
 
 	}
 
